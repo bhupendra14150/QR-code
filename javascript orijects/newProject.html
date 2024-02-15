@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgba(4, 4, 199, 0.461);
+        }
+.container{
+    width:500px;
+    height: 500px;
+    background-color:whitesmoke;
+    /* display:flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin:auto ;
+    margin-top:100px;
+    border-radius: 5px;
+}
+#btn:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+.answer_btn{
+    display:flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    
+    margin-top:70px;
+
+
+    padding:0px 34px;
+    text-align: start;
+}
+#btn{
+    /* display:flex; */
+    /* justify-content:center; */
+
+    /* align-items: center; */
+    padding:4px 150px;
+    
+    
+}
+#question{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:30px
+}
+#nxt{
+    /* padding-top:34px; */
+    margin-top:34px;
+    margin-left: 34px;
+
+    padding:15px 40px;
+}
+.correct{
+    background-color:rgb(4, 222, 4);
+}
+.incorrect{
+    background-color: rgb(248, 211, 211);
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="question"> Question goes here</h2>
+        <div class="answer_btn" id="display">
+            <!-- <button id="btn">Answer 1</button>
+            <button id="btn">Answer 2</button>
+            <button id="btn">Answer 3</button>
+           <button id="btn">Answer 4</button> -->
+        </div>
+        <button id="nxt">next</button>
+    </div>
+    <script>
+        const hariram=[
+            {
+            question:"Who is modi ji",
+            answer:[{
+                text:"student",correct:true
+            },
+            {
+                text:"neta",correct:false
+            },
+            {
+                text:"chor",correct:false
+            },
+            {
+                text:"master",correct:false
+            },
+        ]
+        },
+
+    {
+question:"what is your name?",
+answer:[{
+    text:"bhupendra",correct:true
+},
+{
+    text:"hatty",correct:false
+},
+{
+    text:"radhe",correct:false
+},
+{
+    text:"rma ram",correct:false
+},
+
+    ]
+} ,   
+{
+question:"what is your qualification?",
+answer:[{
+    text:"12Th fail",correct:false
+},
+{
+    text:"b-tech",correct:true
+},
+{
+    text:"bba",correct:false
+},
+{
+    text:"css",correct:false
+},
+
+    ]
+} , 
+{
+question:"where is your home?",
+answer:[{
+    text:"india",correct:false
+},
+{
+    text:"pakistan",correct:false
+},
+{
+    text:"nepal",correct:true
+},
+{
+    text:"chaina",correct:false
+},
+
+    ]
+} , 
+
+    ]
+
+let btn=document.querySelectorAll("#btn");
+let quest=document.getElementById("question");
+
+let index=0;
+function start(){
+    // let index=0;
+    let score=0;
+    showquestion();
+}
+ function showquestion(){
+    
+    let currentquestion=hariram[index];
+    // console.log("checking woorking or not your coce")
+    let questionNo=index+1 ;
+    quest.innerHTML=questionNo+"." +currentquestion.question;
+    currentquestion.answer.forEach((value)=>{
+        let element=document.createElement("div");
+        element.innerHTML=` <button id="btn">${value.text}</button>`
+        element.classList.add("answer_btn,btn");
+
+        let display=document.getElementById("display");
+        display.appendChild(element);
+if(value.correct){
+    element.dataset.correct=value.correct;
+}
+        element.addEventListener("click",move);
+        
+    })
+
+ }
+ function  move(e){
+const select=e.target;
+// console.log(select)
+const istarget=select.dataset.correct==="true";
+console.log(istarget)
+if(istarget){
+    select.classList.add("correct");
+}
+else{
+    select.classList.add("incorrect");
+}
+
+
+ }
+
+ start();
+
+ function handle(){
+    index++;
+    if(index<question.length){
+        showquestion();
+    }else{
+        alert("The game is overr--")
+    }
+ }
+ let next=document.getElementById("nxt");
+ next.addEventListener("click",()=>{
+// console.log("Jai shree ram")
+if(index<question.length){
+    handle();
+
+}else{
+    start();
+    console.log("this code is not working ")
+}
+
+ })
+
+
+
+
+    </script>
+
+</body>
+
+</html>

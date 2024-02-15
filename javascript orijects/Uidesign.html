@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website UI Design</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: skyblue;
+
+        }
+.container{
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: ; */
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(202, 216, 222);
+    width: 70%;
+    height: 500px;
+    /* padding-left: 23px; */
+    margin:auto;
+    margin-top:34px;
+}
+#form{
+    /* display:flex; */
+    /* flex-direction: column; */
+    padding-top:12px;
+    /* padding */
+}
+.ramo{
+    height: 350px;
+    width: 350px;
+    background-color: brown;
+}
+/* .ram{
+display:none;
+} */
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="ram">
+        <img  src="c:\Users\Bhupendra Yadav\Pictures\photo\1659587379515.jpg" alt="_blank" id="newImage" height="350" width="350px">
+    </div>
+    
+<div class="div">
+    <form id="form">
+        <h2>Causal T-Shirt</h2>
+        <h3>$14</h3>
+        <p>30% off</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eius?</p>
+        <p>size</p>
+<label for="small">
+    <input type="radio" name="hari" id="ram">
+    <span>S</span>
+</label>
+<label for="medium">
+    <input type="radio" name="hari" id="ram">
+    <span>M</span>
+</label>
+<label for="large">
+    <input type="radio" name="hari" id="ram">
+    <span>L</span>
+</label>
+<label for="more">
+    <input type="radio" name="hari" id="ram">
+    <span>Xl</span>
+</label>
+<label for="exraMore">
+    <input type="radio" name="hari" id="ram">
+    <span>XXL</span>
+</label>
+    </form>
+<!-- </div> -->
+<!-- <div class="div"> -->
+    <form id="form">
+        <p>color</p>
+<label for="small">
+    <input type="radio" name="hari" id="ram">
+    <span>S</span>
+</label>
+<label for="medium">
+    <input type="radio" name="hari" id="ram">
+    <span>M</span>
+</label>
+<label for="large">
+    <input type="radio" name="hari" id="ram">
+    <span>L</span>
+</label>
+<label for="more">
+    <input type="radio" name="hari" id="ram">
+    <span>Xl</span>
+</label>
+<label for="exraMore">
+    <input type="radio" name="hari" id="ram">
+    <span>XXL</span>
+</label>
+    </form>
+</div>
+<div class="nextbtn">
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+
+    <button class="btn">3</button>
+
+</div>
+
+
+<!-- 
+<form id="color">
+<p>Color</p>
+<label id="red">
+<input type="radio" name="display" id="red">
+
+</label>
+<label id="blue">
+    <input type="radio" name="diaplay" id="red">
+    
+    </label>
+    <label id="yellow">
+        <input type="radio" id="red">
+        
+        </label>
+        <label id="green">
+            <input type="radio" id="red">
+            
+            </label>
+            <label id="black">
+                <input type="radio" id="red">
+                
+                </label>
+            </form> -->
+
+
+
+    
+</div>
+<script>
+    let newImage=document.getElementById("newImage");
+    // console.log(newImage);
+    let btn=document.querySelectorAll(".btn");
+    // console.log(btn);
+    
+btn[0].onclick=function hari(){
+    newImage.style.display="none"
+    // newImage.classList.toggle="image"
+    // newImage.classList.add="ram"
+    console.log("let me check our code is working or not")
+    // newImage.classList.add("ramo")
+}
+btn[1].onclick=function hari(){
+    newImage.style.display="block"
+    // newImage.classList.toggle="image"
+    // newImage.classList.add="ram"
+    console.log("let me check our code is working or not")
+    // newImage.classList.add("ramo")
+}
+// btn[1].onclick=function hari(){
+//     newImage.src="c:\Users\Bhupendra Yadav\Pictures\photo\IMG5857207112.png"
+// }
+
+</script>
+</body>
+</html>

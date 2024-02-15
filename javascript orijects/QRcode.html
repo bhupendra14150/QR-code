@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Genetator</title>
+    <style>
+        body{
+            background-color: black;
+            /* display:flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+        }
+.container{
+    display:flex;
+    /* margin-top:; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:400px;
+    height:400px;
+    background-color:whitesmoke;
+    margin:200px auto;
+    /* padding-top:22px; */
+
+}
+.add{
+    /* display:flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* padding:2px 9px; */
+    background-color: azure;
+    color:red;
+}
+#input{
+    margin-top:11px;
+}
+#btn{
+    margin-top:59px;
+    background-color:rgba(39, 9, 189, 0.76);
+    color:white;
+    padding:6px 30px;
+    border-radius: 6px;
+}
+#btn:hover{
+    background-color: blueviolet;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Enter the prompt</h3>
+        <input type="text" id="input" placeholder="Enter the text">
+        <div id="imageBox">
+            <img  id="image" src="">
+        </div>
+
+        <button id="btn">Generate the code</button>
+        <button id="reset">reset</button>
+        
+    </div>
+    <script>
+      let imageBox=document.getElementById("imageBox");
+      let image=document.getElementById("image");
+      let input=document.getElementById("input");
+
+
+       
+        function execute(){
+image.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+input.value;
+// image.classList.add("add");
+
+        }
+        function disable(){
+            let reset=document.getElementById("reset");
+            reset.addEventListener("click",function(){
+window.location.reload();
+// console.log(hari);
+console.log("woeking our cofe or ot")
+
+            });
+         
+        }
+        // execute();
+        document.getElementById("btn").addEventListener("click",()=>{
+console.log("working your code");
+execute();
+ input.value=""
+// disable();
+
+
+
+        });
+        disable();
+        // input="";
+        // console.log("hari is a codef")
+
+
+
+    </script>
+</body>
+</html>
